@@ -19,3 +19,4 @@ Create a backend API that makes a HTTP/HTTPS request to a number of different Ne
 - Fork this repository on GitHub
 - Occassionally commit changes using GIT while developing
 - When you are ready to submit, open a pull request with this respository
+- Email dondrey@capway.com when finished.
