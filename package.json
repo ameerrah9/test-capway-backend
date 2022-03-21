@@ -1,23 +1,25 @@
 {
-  "name": "test-capway-backend",
-  "version": "1.0.0",
-  "description": "![CapWay](readme-assets/capway.png)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ameerrah9/test-capway-backend.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ameerrah9/test-capway-backend/issues"
-  },
-  "homepage": "https://github.com/ameerrah9/test-capway-backend#readme",
-  "dependencies": {
-    "express": "^4.17.3"
-  }
+    "name": "test-capway-backend",
+    "version": "1.0.0",
+    "description": "![CapWay](readme-assets/capway.png)",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ameerrah9/test-capway-backend.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ameerrah9/test-capway-backend/issues"
+    },
+    "homepage": "https://github.com/ameerrah9/test-capway-backend#readme",
+    "dependencies": {
+        "axios": "^0.26.1",
+        "express": "^4.17.3",
+        "rss-parser": "^3.12.0"
+    }
 }
