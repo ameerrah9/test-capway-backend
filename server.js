@@ -1,7 +1,9 @@
 const express = require('express');
 const axios = require('axios');
+const cheerio = require('cheerio');
 const rssParser = require('rss-parser');
-
+const PORT = 8080;
+const cors = require('cors');
 let parser = new rssParser();
 
 const feeds = {
@@ -14,16 +16,18 @@ const feeds = {
 };
 
 const app = express();
+app.use(cors());
 
 app.get('/api/rss/:feed', async (req, res) => {
   const feedName = req.params.feed;
 
   parser.parseURL(feeds[feedName]).then((data) => {
     console.log(data, feedName);
-    res.send(data);
+    // res.send(data);
+    res.json(data);
   });
 });
 
-app.listen(3000, () =>
-  console.log(`Example app listening on port ${process.env.PORT}!`)
-);
+app.use(cors());
+
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
