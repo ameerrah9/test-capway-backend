@@ -15,7 +15,7 @@ const feeds = {
 
 const app = express();
 
-app.get('api/rss/:feed', async (req, res) => {
+app.get('/api/rss/:feed', async (req, res) => {
   const feedName = req.params.feed;
 
   parser.parseURL(feeds[feedName]).then((data) => {
