@@ -1,4 +1,5 @@
 const feedDisplay = document.querySelector('#feed');
+const linkDisplay = document.querySelector('#links');
 
 const feedsEndpoint = ['anchor', 'megaphone', 'content', 'boom', 'atom'];
 
@@ -13,16 +14,28 @@ function getFeeds(feed) {
   })
     .then((res) => res.json())
     .then((data) =>
-      console.log(
-        data.items.forEach((item) => {
-          var list = document.createElement('ul');
-          var li = document.createElement('li');
-          li.textContent = item.title;
-          list.appendChild(li);
-          feedDisplay.appendChild(list);
-        })
-      )
+      data.items.forEach((item) => {
+        var list = document.createElement('ul');
+        var li = document.createElement('li');
+        li.textContent = item.title;
+        list.appendChild(li);
+        feedDisplay.appendChild(list);
+      })
     );
 }
 
-getFeeds('megaphone');
+feedsEndpoint.forEach(function (item) {
+  let newButton = document.createElement('button');
+  newButton.setAttribute('id', item);
+  newButton.className += item;
+  newButton.innerText += item;
+
+  newButton.addEventListener('click', buttonClick);
+
+  function buttonClick(e) {
+    feedDisplay.innerHTML = '';
+    getFeeds(e.target.className);
+  }
+
+  linkDisplay.appendChild(newButton);
+});
