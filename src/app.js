@@ -14,11 +14,25 @@ function getFeeds(feed) {
   })
     .then((res) => res.json())
     .then((data) =>
-      data.items.forEach((item) => {
+      data.items.forEach((item, i) => {
         var list = document.createElement('ul');
         var li = document.createElement('li');
+        var h3 = document.createElement('h3');
+        var p = document.createElement('p');
+        var newDate = new Date(item.pubDate);
+
+        console.log(item);
         li.textContent = item.title;
+        h3.textContent = item.contentSnippet;
+        p.textContent = `${newDate.getFullYear()}`;
+        if (i % 2 === 0) {
+          list.classList = ['even'];
+        } else if (i % 2 === 1) {
+          list.classList = ['odd'];
+        }
         list.appendChild(li);
+        list.appendChild(h3);
+        list.appendChild(p);
         feedDisplay.appendChild(list);
       })
     );
